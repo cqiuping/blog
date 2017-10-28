@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace = "com.boot.test.demo.mapper.UserMapper">
+    <resultMap id="user" type="com.boot.test.demo.entity.User">
+        <result property="id" column="id" />
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <select id = "findAllUsers" resultMap="user">
+        SELECT * FROM user;
+    </select>
+
+    <select id = "findUserByUsername" resultMap="user">
+        select * from user where username=#{username};
+    </select>
+
+</mapper>
