@@ -3,6 +3,7 @@ package com.boot.test.demo.config;
 import java.net.URL;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -40,5 +41,15 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
         super.addResourceHandlers(registry);
 
     }
+
+    public CommonsMultipartResolver multipartResolver(){
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setDefaultEncoding("utf-8");
+        resolver.setMaxUploadSize(2048000);
+        resolver.setResolveLazily(true);
+        return resolver;
+    }
+
+
 }
 

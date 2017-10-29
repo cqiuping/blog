@@ -20,6 +20,8 @@ spring:
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
 
+main.classpath: G:\MyReponsitory\demo\src\main\resources
+
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.boot.test.demo.mapper

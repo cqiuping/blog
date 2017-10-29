@@ -4,7 +4,7 @@ define(["controller/controllers"], function (controllers) {
             // $http.get("backend/blog/getAllBlog").then(function (data) {
             //
             // });
-            $scope.id = 6;
+            $scope.id = 578;
             $http.get("backend/blog/getBlog/" + $scope.id).then(function (data) {
                 console.log(data);
                 if(data.data.status == 0){

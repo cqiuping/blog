@@ -125,8 +125,10 @@ public class DemoApplicationTests {
 	}
 
 	@Test
-	public void timeUnitTest(){
-		System.out.println( TimeUnit.MILLISECONDS.toSeconds(1000));
+	public void timeUnitTest() throws Exception {
+		mockMvc.perform(get("/backend/blog/test"))
+				.andExpect(status().isOk())
+				.andDo(print());
 	}
 
 }
